@@ -1,0 +1,25 @@
+﻿#barcont {
+    position: absolute; 
+    margin:0 auto;
+    margin-left:5%; 
+    margin-top:2%; 
+    width: 40%; 
+    height:500px; 
+    border:1px solid #eff2f7; 
+    border-radius: 3px; 
+}
+    #barcont h3 {
+        display:block;
+        text-align:center;
+        border-bottom: solid 1px #eff2f7;
+        background: #fafafa; 
+        color: #767676;
+        border: 1px solid transparent;
+        padding-bottom: 12px;
+        padding-top: 12px;
+       
+    }
+   #chart_div {
+    display:block;   
+    height:90%;
+   }
