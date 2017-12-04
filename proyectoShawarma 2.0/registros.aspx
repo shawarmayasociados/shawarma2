@@ -8,6 +8,8 @@
     <!-- style del navegador! solo el navegador lateral, no de la estructura de la página-->
     <link href="Content/nav.css" rel="stylesheet" />
     <link href="Content/font.css" rel="stylesheet" />
+    <link href="Content/filternav.css" rel="stylesheet" />
+    <link href="Content/tabla_registros.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
@@ -23,5 +25,21 @@
         </ul>
     </nav>
     
+    
+    <form  runat="server" class="contenedor_simulaciones" >
+   
+        <h3>Registro actividad de usuarios</h3>
+        <div id="contenedor-planilla">
+        <asp:GridView runat="server" ID="cargadedatos" CssClass="planilla" AllowPaging="true" 
+ HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
+        PageSize="9" OnPageIndexChanging="cargar">
+        <PagerStyle CssClass="page" HorizontalAlign="Center" />
+
+        </asp:GridView>
+
+        </div>
+        
+         <asp:Label ID="errorlabel" runat="server" Text="" CssClass="error"></asp:Label>
+    </form>
 </body>
 </html>

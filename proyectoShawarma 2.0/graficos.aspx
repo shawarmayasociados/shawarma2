@@ -33,52 +33,101 @@
             var options =
                 {
                    
-                    "backgroundColor": { "fill": "#FFFFFF" },
+                    "backgroundColor": { "fill": "#FFFFFF" }, //le damos un color al fondo
                     
-                    "fontSize": 12,
-                    "pieSliceTextStyle": { "color": "#FFFFFF" },
-                    "sliceVisibilityThreshold": true,
-                    "legend":
+                    "fontSize": 14, //tamñao de letra 14
+                    "pieSliceTextStyle": { "color": "#FFFFFF" }, //ocultamos el texto poniendo en blanco su contenido para que desaparezca con el fondo
+                    
+                    "legend": //leyenda
                     {
-                        "position": "none",
-                        "textStyle": {
-                            "color": "#000000", "fontSize": 13
-                        }
+                        "position": "none", //lo ocultamos
+                        
 
                     },
-                    "tooltip":
+                    "tooltip": //el efecto
                     {
                         "textStyle": { "color": "#000000" },
                         "showColorCode": true
                     },
-                    "colors":
-                    ["#2574A9"],
-                //    "colors":
-                //    ["#D9B611", "#F3C13A", "#F4D03F", "#F5D76E", "#F9690E",
-                //        "#8F1D21", "#F44336", "#C91F37", "#D24D57",
-                //        "#003171", "#4B77BE", "#19B5FE","#89C4F4",
-                //        "#006442", "#407A52", "#6B9362", "#26C281",
-                //        "#049372", "#2ABB9B", "#F5D76E",
-                //        "#F1A9A0", "#336E7B", "#59ABE3",
-                //        "#013243", "#DCC6E0", "#16A085", "#F7CA18",
-                //        "#F2784B", "#913D88","#26A69A"],
-                //    chartArea: {
-                //        left: 10, top: 10, bottom:10, width: "100%", height: "100%"
-                //    }
-                   chartArea: {
-                       width: "60%", height: "90%", left: "35%", top:" 1%"
+                    "colors": //color del grafico
+                    ["#e74c3c"],
+               
+                    chartArea: { //css para el grafico
+                        widht: "90%", height: "90%", left: "34%"
                     }
                 };
-            // Set chart options
-          
-
-            // Instantiate and draw our chart, passing in some options.
+            
+            // creamos una variable con los datos de la misma y la dibujamos en el div de html
                     var barchart = new google.visualization.BarChart(document.getElementById('chart_div'));
             barchart.draw(data, options);
         }
     </script>
     <!-- style del navegador! solo el navegador lateral, no de la estructura de la página-->
+    <script>
 
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            
+         
+            var data = google.visualization.arrayToDataTable([
+                ['Rango', 'Solicitudes'],
+                ['0 - 499.999', <%=rango1()%>],
+                ['2.000.000 - 4.999.999', <%=rango2()%>],
+                ['5.000.000 o mas', <%=rango3()%>]
+
+            ]);
+            // Set chart options
+            var options = {
+                
+                
+                
+                
+                "legend": {
+                    "position": "bottom",
+                    "textStyle":
+                    {
+                        "color": "#000000",
+                        "fontSize": 14
+                    }
+                },
+                "backgroundColor": { "fill": "#FFFFFF" }, //le damos un color al fondo
+
+                "fontSize": 17.161388653683318, //tamñao de letra 14
+                "pieSliceTextStyle": { "color": "#FFFFFF" }, //ocultamos el texto poniendo en blanco su contenido para que desaparezca con el fondo
+
+                "legend": //leyenda
+                {
+                    "position": "none"
+
+                },
+                "tooltip": //el efecto
+                {
+                    "textStyle": { "color": "#000000" },
+                    "showColorCode": true
+                },
+                
+
+                chartArea: { //css para el grafico
+                    top: "15%", width: "80%", height: "80%"
+                }
+                
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div-2'));
+            chart.draw(data, options);
+        }
+    </script>
    
   
 </head>
@@ -95,16 +144,39 @@
         </ul>
     </nav>
   
-    <form id="form1" runat="server" >
+    <form id="form1"  runat="server" >
 
-        <div>
-            <asp:Label id="contador" text="" runat="server" />
+     
+
+        
+
+        <div id="contenedor-contadores">
+         <div id="contenedor-simulaciones">
+            <asp:Label id="contadorsimulaciones" CssClass="numeros" runat="server" />
+            <h4>Simulaciones</h4>
         </div>
-
+        <div id="contador-bancos">
+            <asp:Label id="banco" CssClass="numeros" Text="" runat="server" />
+            <h4>Bancos</h4>
+            
+        </div>
+        <div id="contador-usuarios">
+            <asp:Label id="usuarios" CssClass="numeros" Text="" runat="server" />
+            <h4>Usuarios</h4>
+             <h4>registrados</h4>
+            
+        </div>
+        </div>
         <div id="barcont" >
         <h3>Simulaciones realizadas por Banco</h3>
         
         <div id="chart_div"></div>
+        </div>    
+        
+        <div id="barcont-2" >
+        <h3>Rango de monto de prestamos solicitados</h3>
+        
+        <div id="chart_div-2"></div>
         </div>    
 
     </form>

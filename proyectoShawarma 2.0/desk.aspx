@@ -42,6 +42,7 @@
         </asp:GridView>
 
         </div>
+        
          <asp:Label ID="errorlabel" runat="server" Text="" CssClass="error"></asp:Label>
     </form>
 </body>

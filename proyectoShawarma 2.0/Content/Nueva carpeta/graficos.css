@@ -1,0 +1,81 @@
+﻿#barcont {
+    position: absolute; 
+    margin:0 auto;
+    margin-left:5%; 
+    margin-top:1%; 
+    width: 620px; 
+    height:620px; 
+    border:1px solid #eff2f7; 
+    border-radius: 3px; 
+    display:block;
+}
+    #barcont h3 {
+        display: block;
+        text-align: center;
+        background: #FE8A71;
+        color: white;
+        border: 1px solid transparent;
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+#chart_div 
+{ 
+    display:block; 
+    height:90%; 
+    width: 100%; 
+    position:absolute;
+   
+   }
+#contador-bancos {
+   
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: #00BCD4;
+    margin-left: 2%;
+    
+}
+
+
+#contenedor-simulaciones {
+    width: 150px;
+    display: inline-block;
+    height: 100px;
+    background-color: #87D37C;
+    margin-left: 5%;
+}
+
+#contenedor-contadores {
+    float: right;
+    width: 550px;
+    
+    margin-right: 4%;
+    margin-top: 1%;
+}
+
+.label1 {
+   
+   width:55px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 6%;
+    color:white;
+    font-size: 3em;
+
+}
+
+.label2 {
+    width: 43px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 6%;
+    color: white;
+    font-size: 3em;
+}
+
+h4
+{
+    width:100%;
+    text-align:center;
+    color:white;
+}

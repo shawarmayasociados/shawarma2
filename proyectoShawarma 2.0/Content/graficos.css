@@ -1,25 +1,116 @@
 ﻿#barcont {
-    position: absolute; 
-    margin:0 auto;
-    margin-left:5%; 
-    margin-top:2%; 
-    width: 40%; 
-    height:500px; 
-    border:1px solid #eff2f7; 
-    border-radius: 3px; 
+    position: relative;
+    margin: 0 auto;
+    width: 620px;
+    height: 620px;
+    float: left;
+    margin-top: 1%;
+    margin-left: 5%;
+    border: 1px solid #eff2f7;
+    border-radius: 3px;
+    display: block;
 }
+
     #barcont h3 {
-        display:block;
-        text-align:center;
-        border-bottom: solid 1px #eff2f7;
-        background: #fafafa; 
-        color: #767676;
+        display: block;
+        text-align: center;
+        background: #e74c3c;
+        color: white;
         border: 1px solid transparent;
         padding-bottom: 12px;
         padding-top: 12px;
-       
     }
-   #chart_div {
-    display:block;   
-    height:90%;
+
+#barcont-2 {
+    position: relative;
+    
+    display: inline-block;
+    margin: 0 auto;
+    width: 530px;
+    height: 500px;
+    margin-top: 1%;
+    margin-left: 5%;   
+    border: 1px solid #eff2f7;
+    border-radius: 3px;
+}
+#chart_div 
+{ 
+    display:block; 
+    height:90%; 
+    width: 90%; 
+    position:relative;
+    left:2%;
+
+   
    }
+#chart_div-2
+{
+    height: 80%; 
+    width: 100%; 
+    
+}
+#contador-bancos {
+    overflow: hidden;
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: #2574A9;
+    margin-left: 2%;
+}
+#contador-usuarios {
+    overflow: hidden;
+    width: 150px;
+    display: inline-block;
+    height: 100px;
+    background-color: #FFB900;
+    margin-left: 2%;
+}
+    .numeros 
+    {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+        font-size: 3em;
+    }
+
+
+#contenedor-simulaciones {
+    overflow: hidden;
+    width: 150px;
+    display: inline-block;
+    height: 100px;
+    background-color: #27ae60;
+    margin-left: 5%;
+}
+
+#contenedor-contadores {
+    float: right;
+    width: 550px;
+    
+    margin-right: 4%;
+    margin-top: 1%;
+}
+
+
+
+
+
+h4
+{
+    width:100%;
+    text-align:center;
+    color:white;
+}
+
+#barcont-2 h3 {
+    color: white;
+    width: 100%;
+    text-align: center;
+    background: #414040;
+    color: white;
+    border: 1px solid transparent;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}

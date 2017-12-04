@@ -31,9 +31,12 @@ public partial class _Default : System.Web.UI.Page
         {
             con.Open();
             //creamos una query para enviar a SQL solicitando todos los datos de usuario y comparando con los que haya suministado el usuario.
-            string query = "SELECT count(*) FROM ignacio.Usuario WHERE Correo = '" + textuser.Text + "' and Password = '" + textpass.Text + "' ";
+            string query = "SELECT count(*) FROM ignacio.Usuario WHERE Correo = @usuario and Password = @password";
+           
             //creamos un sql commando con los datos de query y conexión.
             SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@usuario", textuser.Text);
+            cmd.Parameters.AddWithValue("@password", textpass.Text);
             //recuperamos el dato de respuesta del servidor execute scalar intepreta nuestro valor en un numero binario 0 o 1, 1 es que la query solicitada no es nula
             string output = cmd.ExecuteScalar().ToString();
 
@@ -50,7 +53,7 @@ public partial class _Default : System.Web.UI.Page
                 Label1.Text = "Error en usuario o contraseña";
             }
         }
-        catch
+        catch //en caso de no iniciar el procedimiento anterior, enviamos error para evitar que el programa se caiga
         {
             Label1.Text = "Ocurrio un error inesperado, Intentelo nuevamente";
         }
